@@ -1,5 +1,12 @@
+import AddTodo from "./components/AddTodo";
+
 function App() {
-  return null;
+  return (
+    <>
+      <h1>TODO LIST</h1>
+      <AddTodo />
+    </>
+  );
 }
 
 export default App;
