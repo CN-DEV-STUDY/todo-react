@@ -9,6 +9,7 @@ function TodoList() {
 
     const [todoList, setTodoList] = useState([]);
     const [loading , setLoading] = useState(false);
+    const viewContent = false;
 
     useEffect(()=> {
         const getList = async() => {
@@ -28,13 +29,16 @@ function TodoList() {
     if (loading) return <div>로딩중..</div>;
 
     return (
+
         <ListGroup>
+            <h6>할일 개수 : {todoList.length}</h6>
 
             {todoList.map((todo) =>  
 
             <TodoItem
             key={todo.tno}
             todo = {todo}
+            contentToggle = {viewContent}
             />
                 
             )}
@@ -42,4 +46,4 @@ function TodoList() {
     )
 }
 
-export default TodoList
+export default React.memo(TodoList)

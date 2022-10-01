@@ -15,6 +15,7 @@ function AddTodo() {
     setContent(event.target.value);
   };
 
+
   const onSubmit = (event) => {
     event.preventDefault();
     const url = "/todo/register";
@@ -24,7 +25,7 @@ function AddTodo() {
       title: title,
       content: content,
     };
-    axios.post(url, data);
+    axios.post(url,data);
 
     setTitle("");
     setContent("");
